@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>8 Марта - Ты Совершенна 🌟</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #fff5f5, #ffecec, #ffd6d6);
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            color: #5d3a3a;
+            animation: softGlow 8s infinite alternate;
+        }
+
+        @keyframes softGlow {
+            0% { background-color: #fff5f5; }
+            100% { background-color: #ffebeb; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+            border: 2px solid #ffb3c1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 20%, 
+                rgba(255, 182, 193, 0.1) 50%, 
+                transparent 80%);
+            animation: shine 6s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(45deg) translate(-30%, -30%); }
+            100% { transform: rotate(45deg) translate(30%, 30%); }
+        }
+
+        .photo-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .photo-container:hover {
+            transform: rotate(-1deg) scale(1.02);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #d44d69;
+            font-size: 2.8em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(212, 77, 105, 0.1);
+        }
+
+        .love-message {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(45deg, #fff0f6, #fff5f5);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .love-message::after {
+            content: "💖";
+            position: absolute;
+            bottom: -25px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ff7f96;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2em; }
+            .card { padding: 20px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="card">
+        <div class="photo-container">
+            <img src="photo_2025-03-08_14-13-13.jpg" alt="Наш идеальный момент">
+        </div>
+
+        <h1>💫 С 8 Марта, Моё Совершенство 💫</h1>
+        
+        <div class="love-message">
+            <p>
+                "Ты - тот самый идеальный танец под звездами,<br>
+                Нежность, что наполняет каждый мой день.<br>
+                Спасибо за:<br>
+                🌸 Твою улыбку, что светлее солнца<br>
+                🌸 Мудрость, что направляет<br>
+                🌸 Любовь, что окрыляет<br><br>
+                Пусть каждый новый день будет<br>
+                Таким же волшебным, как ты сама!"
+            </p>
+        </div>
+
+        <div style="margin: 30px auto; max-width: 500px;">
+            <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/4EZVS8RvDU1ul9zBZYS3pt?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameborder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Создание мерцающих звезд
+        function createStars() {
+            const container = document.getElementById('stars');
+            for(let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+</body>
+</html>
